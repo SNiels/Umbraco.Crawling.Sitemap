@@ -1,0 +1,19 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Sitemap>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = null;
+    umbraco.library.ChangeContentType("application/xml");
+    var pages = Model.Content.Site().DescendantsOrSelf<IBasePage>()
+                .Where(page => page.GetPropertyValue("sitemapExclude", true, false) == false);
+}<?xml version="1.0" encoding="UTF-8" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+@foreach (var page in pages)
+{
+    <url>
+        <loc>@page.UrlAbsolute()</loc>
+        <lastmod>@page.UpdateDate</lastmod>
+        <changefreq>@(page.GetPropertyValue<string>("sitemapChangeFrequency", "weekly"))</changefreq>
+        <priority>@(page.GetPropertyValue("sitemapPriority", 0.5))</priority>
+    </url>
+}
+</urlset> 
