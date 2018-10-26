@@ -1,6 +1,15 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.HomePage>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = null;
+    Layout = null;
+    var robotsValue = string.Format("{0}, {1}", Model.Content.RobotsIndex ? "index" : "noindex", Model.Content.RobotsFollow ? "follow" : "nofollow");
 }
-<h1>@Model.Content.Name</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="robots" content="@robotsValue" />
+</head>
+<body>
+    <h1>@Model.Content.Name</h1>
+</body>
+</html>

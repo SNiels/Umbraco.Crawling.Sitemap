@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawling.Sitemap", "Crawling.Sitemap\Crawling.Sitemap.csproj", "{2069CB36-C0F3-4D98-B88A-89E9CA639346}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawling", "Crawling.Sitemap\Crawling.csproj", "{2069CB36-C0F3-4D98-B88A-89E9CA639346}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,12 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Robots>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = null;
+    umbraco.library.ChangeContentType("text/plain");
+    var rootUrl = Request.Url.GetLeftPart(UriPartial.Authority);
+}Sitemap: @(rootUrl + "/sitemap.xml")
+User-agent: *
+@foreach(var url in Model.Content.DisallowedUrls)
+{
+    @Html.Raw(string.Format("Disallow: {0}\n", url))
+}
