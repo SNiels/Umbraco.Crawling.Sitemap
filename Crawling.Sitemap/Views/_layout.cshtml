@@ -1,7 +1,12 @@
-﻿@inherits UmbracoTemplatePage
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.IBasePage>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    var robotsValue = string.Format("{0}, {1}", Model.Content.RobotsIndex ? "index" : "noindex", Model.Content.RobotsFollow ? "follow" : "nofollow");
+}
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="robots" content="@robotsValue" />
 </head>
 <body>
     @RenderBody()

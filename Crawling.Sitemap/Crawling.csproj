@@ -323,6 +323,8 @@
     <Content Include="Views\HomePage.cshtml" />
     <Content Include="Views\Sitemap.cshtml" />
     <Content Include="Views\Robots.cshtml" />
+    <Content Include="Views\_layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
